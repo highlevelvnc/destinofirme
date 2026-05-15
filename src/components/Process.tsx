@@ -10,7 +10,7 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section id="processo" className="relative py-24 md:py-32 bg-navy-900/40 border-y border-white/5">
+    <section id="processo" className="relative py-24 md:py-32 bg-cream-100 border-y border-navy-900/5">
       <div className="container-prem">
         <SectionHeader
           kicker="Como trabalhamos"
@@ -18,7 +18,7 @@ export default function Process() {
         />
 
         <ol className="mt-16 relative grid gap-10 md:gap-6 md:grid-cols-4">
-          <div className="hidden md:block absolute top-7 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/40 to-transparent" />
+          <div className="hidden md:block absolute top-7 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent" />
           {STEPS.map(({ icon: Icon, title, desc }, i) => (
             <li
               key={title}
@@ -27,17 +27,17 @@ export default function Process() {
               className="relative"
             >
               <div className="relative flex items-center md:block">
-                <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-gold-400/40 bg-navy-950 text-gold-300">
+                <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-gold-500/50 bg-white text-gold-600 shadow-soft">
                   <Icon className="h-6 w-6" strokeWidth={1.5} />
                 </div>
-                <span className="ml-5 md:ml-0 md:absolute md:top-0 md:right-0 font-display text-5xl font-bold text-white/5">
+                <span className="ml-5 md:ml-0 md:absolute md:top-0 md:right-0 font-display text-5xl font-bold text-navy-900/8">
                   0{i + 1}
                 </span>
               </div>
-              <h3 className="mt-6 font-display text-lg font-semibold text-white tracking-tight">
+              <h3 className="mt-6 font-display text-lg font-semibold text-navy-900 tracking-tight">
                 {title}
               </h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-bone/65 max-w-xs">{desc}</p>
+              <p className="mt-2 text-[15px] leading-relaxed text-navy-700/75 max-w-xs">{desc}</p>
             </li>
           ))}
         </ol>

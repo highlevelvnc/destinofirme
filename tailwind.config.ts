@@ -30,7 +30,15 @@ const config: Config = {
           800: "#5e432a",
           900: "#4b3724",
         },
+        cream: {
+          50: "#fdfbf6",
+          100: "#f8f4ea",
+          200: "#f0ead8",
+          300: "#e4dbc1",
+          400: "#d4c7a4",
+        },
         bone: "#f5f1ea",
+        ink: "#1a1d28",
       },
       fontFamily: {
         display: ["var(--font-display)", "ui-sans-serif", "system-ui"],
@@ -41,12 +49,9 @@ const config: Config = {
         loose2: "0.18em",
       },
       boxShadow: {
-        soft: "0 20px 60px -20px rgba(10,12,20,0.35)",
-        card: "0 1px 0 0 rgba(255,255,255,0.04) inset, 0 30px 60px -30px rgba(0,0,0,0.55)",
-      },
-      backgroundImage: {
-        "noise":
-          "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>\")",
+        soft: "0 20px 60px -20px rgba(10,12,20,0.12)",
+        card: "0 1px 2px rgba(10,12,20,0.04), 0 24px 48px -24px rgba(10,12,20,0.15)",
+        glow: "0 30px 60px -20px rgba(195,154,85,0.25)",
       },
     },
   },

@@ -11,15 +11,15 @@ html {
 }
 
 body {
-  @apply bg-navy-950 text-bone font-body antialiased;
+  @apply bg-cream-50 text-ink font-body antialiased;
   background-image:
-    radial-gradient(1200px 600px at 80% -10%, rgba(195,154,85,0.10), transparent 60%),
-    radial-gradient(900px 500px at -10% 30%, rgba(36,40,60,0.55), transparent 60%);
+    radial-gradient(900px 500px at 90% -10%, rgba(195,154,85,0.10), transparent 60%),
+    radial-gradient(700px 400px at -10% 20%, rgba(36,40,60,0.05), transparent 60%);
 }
 
-::selection { background: rgba(195,154,85,0.35); color: #fff; }
+::selection { background: rgba(195,154,85,0.35); color: #0a0c14; }
 
-/* Scroll reveal — visible-by-default, hidden only when JS marks it */
+/* Scroll reveal */
 [data-revealed="false"] {
   opacity: 0;
   transform: translate3d(0, 28px, 0);
@@ -39,44 +39,61 @@ body {
 }
 
 .gold-rule {
-  background: linear-gradient(90deg, transparent, rgba(195,154,85,0.7), transparent);
+  background: linear-gradient(90deg, transparent, rgba(176,133,68,0.55), transparent);
   height: 1px;
 }
 
 .gold-text {
-  background: linear-gradient(180deg, #e2cca2 0%, #b08544 100%);
+  background: linear-gradient(180deg, #b08544 0%, #785530 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .btn-primary {
-  @apply relative inline-flex items-center justify-center gap-2 rounded-md bg-gold-400 px-6 py-3.5 font-display text-[15px] font-semibold tracking-wide text-navy-950 transition-all duration-300;
-  box-shadow: 0 12px 30px -10px rgba(195,154,85,0.5);
+  @apply relative inline-flex items-center justify-center gap-2 rounded-md bg-navy-900 px-6 py-3.5 font-display text-[15px] font-semibold tracking-wide text-cream-50 transition-all duration-300;
+  box-shadow: 0 12px 30px -10px rgba(10,12,20,0.35);
   overflow: hidden;
   isolation: isolate;
 }
 .btn-primary::after {
   content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.55) 50%, transparent 70%);
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(195,154,85,0.35) 50%, transparent 70%);
   transform: translateX(-120%);
   transition: transform 0.7s ease;
   z-index: -1;
 }
 .btn-primary:hover::after { transform: translateX(120%); }
 .btn-primary:hover {
-  @apply bg-gold-300;
+  @apply bg-navy-800;
   transform: translateY(-2px);
-  box-shadow: 0 18px 40px -12px rgba(195,154,85,0.7);
+  box-shadow: 0 18px 40px -12px rgba(10,12,20,0.45);
 }
 
+.btn-gold {
+  @apply relative inline-flex items-center justify-center gap-2 rounded-md bg-gold-500 px-6 py-3.5 font-display text-[15px] font-semibold tracking-wide text-white transition-all duration-300;
+  box-shadow: 0 12px 30px -10px rgba(195,154,85,0.45);
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-gold::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.55) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+  z-index: -1;
+}
+.btn-gold:hover::after { transform: translateX(120%); }
+.btn-gold:hover { @apply bg-gold-600; transform: translateY(-2px); }
+
 .btn-ghost {
-  @apply inline-flex items-center justify-center gap-2 rounded-md border border-gold-400/60 px-6 py-3.5 font-display text-[15px] font-semibold tracking-wide text-gold-200 transition-all duration-300;
+  @apply inline-flex items-center justify-center gap-2 rounded-md border border-navy-900/30 bg-white/40 px-6 py-3.5 font-display text-[15px] font-semibold tracking-wide text-navy-900 transition-all duration-300;
+  backdrop-filter: blur(8px);
 }
 .btn-ghost:hover {
-  @apply border-gold-300 text-gold-100 bg-gold-400/10;
+  @apply border-navy-900/60 bg-white/70;
 }
 
 .btn-wa {
@@ -86,12 +103,12 @@ body {
 .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -12px rgba(37,211,102,0.7); }
 
 .kicker {
-  @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-loose2 text-gold-300;
+  @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-loose2 text-gold-600;
 }
 .kicker::before {
   content: "";
   width: 28px; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(195,154,85,0.9));
+  background: linear-gradient(90deg, transparent, rgba(176,133,68,0.9));
 }
 
 .container-prem {
@@ -99,10 +116,8 @@ body {
 }
 
 .surface-card {
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0)) ,
-    linear-gradient(180deg, #11131e 0%, #0c0e17 100%);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, #ffffff 0%, #fbf9f3 100%);
+  border: 1px solid rgba(10,12,20,0.06);
 }
 
 .gold-border-top {
@@ -111,25 +126,19 @@ body {
 .gold-border-top::before {
   content: "";
   position: absolute; left: 24px; right: 24px; top: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(195,154,85,0.7), transparent);
+  background: linear-gradient(90deg, transparent, rgba(176,133,68,0.7), transparent);
 }
 
 .glass-header {
-  background: rgba(10, 12, 20, 0.55);
-  backdrop-filter: saturate(140%) blur(14px);
-  -webkit-backdrop-filter: saturate(140%) blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(253, 251, 246, 0.78);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid rgba(10,12,20,0.06);
+  box-shadow: 0 10px 30px -20px rgba(10,12,20,0.15);
 }
 
 .hero-vignette {
   background:
-    radial-gradient(1200px 600px at 50% 100%, rgba(10,12,20,0.95), transparent 60%),
-    linear-gradient(180deg, rgba(10,12,20,0.55) 0%, rgba(10,12,20,0.85) 100%);
-}
-
-.noise-overlay::after {
-  content: "";
-  position: absolute; inset: 0;
-  background-image: var(--tw-bg-noise, none);
-  opacity: 0.06; pointer-events: none; mix-blend-mode: overlay;
+    radial-gradient(1200px 600px at 50% 100%, rgba(253,251,246,0.85), transparent 60%),
+    linear-gradient(180deg, rgba(10,12,20,0.42) 0%, rgba(10,12,20,0.6) 100%);
 }

@@ -13,7 +13,7 @@ const SERVICES = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/5 bg-navy-950">
+    <footer className="relative bg-navy-900 text-bone">
       <div className="container-prem pt-20 pb-10">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-5">
@@ -22,7 +22,7 @@ export default function Footer() {
               alt="Destino Firme Empreendimentos"
               width={180}
               height={56}
-              className="h-12 w-auto invert brightness-0 contrast-200"
+              className="h-12 w-auto [filter:brightness(0)_invert(1)]"
             />
             <p className="mt-6 max-w-md text-bone/65 leading-relaxed">
               {COMPANY.fullName} — remodelações, pladur, pintura, barramentos e

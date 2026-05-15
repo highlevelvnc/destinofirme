@@ -20,6 +20,8 @@ export default function Header() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
+  const onDark = !scrolled;
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
@@ -33,7 +35,9 @@ export default function Header() {
             alt="Destino Firme Empreendimentos"
             width={180}
             height={56}
-            className="h-10 w-auto md:h-11 invert brightness-0 contrast-200"
+            className={`h-10 w-auto md:h-11 transition-all duration-500 ${
+              onDark ? "[filter:brightness(0)_invert(1)]" : ""
+            }`}
             priority
           />
         </Link>
@@ -43,7 +47,9 @@ export default function Header() {
             <a
               key={l.href}
               href={l.href}
-              className="relative text-[13px] font-medium uppercase tracking-[0.14em] text-bone/80 transition-colors hover:text-gold-300"
+              className={`relative text-[13px] font-medium uppercase tracking-[0.14em] transition-colors ${
+                onDark ? "text-white/85 hover:text-gold-200" : "text-navy-700 hover:text-gold-600"
+              }`}
             >
               {l.label}
             </a>
@@ -51,7 +57,12 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="btn-primary !py-3 !px-5 !text-[13px]">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener"
+            className={`${onDark ? "btn-gold" : "btn-primary"} !py-3 !px-5 !text-[13px]`}
+          >
             <MessageCircle className="h-4 w-4" /> Pedir Orçamento
           </a>
         </div>
@@ -59,7 +70,9 @@ export default function Header() {
         <button
           aria-label="Abrir menu"
           onClick={() => setOpen(true)}
-          className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/10 text-bone"
+          className={`lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-md border transition-colors ${
+            onDark ? "border-white/20 text-white" : "border-navy-900/20 text-navy-900"
+          }`}
         >
           <Menu className="h-5 w-5" />
         </button>
@@ -71,18 +84,18 @@ export default function Header() {
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="absolute inset-0 bg-navy-950/95 backdrop-blur-xl" onClick={() => setOpen(false)} />
+        <div className="absolute inset-0 bg-cream-50/95 backdrop-blur-xl" onClick={() => setOpen(false)} />
         <div
-          className={`absolute right-0 top-0 h-full w-[88%] max-w-sm surface-card border-l border-white/5 p-6 flex flex-col transition-transform duration-500 ${
+          className={`absolute right-0 top-0 h-full w-[88%] max-w-sm bg-white border-l border-navy-900/10 p-6 flex flex-col transition-transform duration-500 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className="flex items-center justify-between">
-            <Image src="/logo.png" alt="Destino Firme" width={140} height={44} className="h-9 w-auto invert brightness-0 contrast-200" />
+            <Image src="/logo.png" alt="Destino Firme" width={140} height={44} className="h-9 w-auto" />
             <button
               aria-label="Fechar menu"
               onClick={() => setOpen(false)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/10 text-bone"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-navy-900/20 text-navy-900"
             >
               <X className="h-5 w-5" />
             </button>
@@ -94,7 +107,7 @@ export default function Header() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-3 font-display text-xl text-bone/90 hover:text-gold-300 transition-colors"
+                className="py-3 font-display text-xl text-navy-900 hover:text-gold-600 transition-colors"
               >
                 {l.label}
               </a>

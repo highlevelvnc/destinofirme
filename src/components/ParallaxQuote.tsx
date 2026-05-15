@@ -34,15 +34,15 @@ export default function ParallaxQuote() {
     <section ref={sectionRef} className="relative overflow-hidden">
       <div ref={bgRef} className="absolute inset-0 will-change-transform">
         <Image
-          src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?auto=format&fit=crop&w=2400&q=80"
+          src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=2400&q=80"
           alt=""
           fill
           className="object-cover"
           sizes="100vw"
         />
       </div>
-      <div className="absolute inset-0 bg-navy-950/80" />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/40 to-navy-950" />
+      <div className="absolute inset-0 bg-navy-900/82" />
+      <div className="absolute inset-0 bg-gradient-to-b from-cream-50 via-transparent to-cream-50" />
 
       <div className="relative container-prem py-28 md:py-40 text-center">
         <p data-reveal className="kicker justify-center mx-auto">Compromisso</p>
@@ -54,7 +54,7 @@ export default function ParallaxQuote() {
           Transformamos espaços com <span className="gold-text">detalhe, compromisso</span> e acabamento profissional.
         </h2>
         <div data-reveal data-reveal-delay="200" className="mt-10">
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="btn-primary">
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="btn-gold">
             <MessageCircle className="h-5 w-5" /> Solicitar Orçamento
           </a>
         </div>

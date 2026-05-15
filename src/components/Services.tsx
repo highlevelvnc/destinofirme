@@ -37,7 +37,7 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="servicos" className="relative py-24 md:py-32">
+    <section id="servicos" className="relative py-24 md:py-32 bg-cream-50">
       <div className="container-prem">
         <SectionHeader
           kicker="Serviços"
@@ -54,19 +54,19 @@ export default function Services() {
               key={title}
               data-reveal
               data-reveal-delay={i * 70}
-              className="group surface-card gold-border-top relative rounded-lg p-7 md:p-8 transition-all duration-500 hover:-translate-y-1 hover:border-gold-400/30 hover:shadow-card"
+              className="group surface-card gold-border-top relative rounded-lg p-7 md:p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-card hover:border-gold-500/40"
             >
               <div className="flex items-start justify-between">
-                <div className="flex h-14 w-14 items-center justify-center rounded-md border border-gold-400/30 bg-navy-800/50 text-gold-300 transition-colors group-hover:bg-gold-400/10 group-hover:text-gold-200">
+                <div className="flex h-14 w-14 items-center justify-center rounded-md border border-gold-500/30 bg-cream-50 text-gold-600 transition-colors group-hover:bg-gold-500 group-hover:text-white group-hover:border-gold-500">
                   <Icon className="h-6 w-6" strokeWidth={1.5} />
                 </div>
-                <ArrowUpRight className="h-5 w-5 text-bone/30 transition-all duration-300 group-hover:text-gold-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                <ArrowUpRight className="h-5 w-5 text-navy-900/25 transition-all duration-300 group-hover:text-gold-600 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </div>
-              <h3 className="mt-7 font-display text-xl font-semibold tracking-tight text-white">
+              <h3 className="mt-7 font-display text-xl font-semibold tracking-tight text-navy-900">
                 {title}
               </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-bone/65">{desc}</p>
-              <div className="mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-loose2 text-gold-300/0 group-hover:text-gold-300 transition-colors">
+              <p className="mt-3 text-[15px] leading-relaxed text-navy-700/75">{desc}</p>
+              <div className="mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-loose2 text-gold-600/0 group-hover:text-gold-600 transition-colors">
                 Pedir orçamento
               </div>
             </a>
